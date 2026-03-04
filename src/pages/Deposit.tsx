@@ -8,7 +8,7 @@ export const Deposit: React.FC = () => {
     const location = useLocation();
     const { amount, wallet, planName } = location.state || { amount: 0, wallet: 'deposit', planName: 'Investment' };
     const [selectedFile, setSelectedFile] = useState<File | null>(null);
-    const [btcAddress] = useState('1KCTNPNxyGGDs2jSD78n5xzogzaNCoUDAP');
+    const [btcAddress] = useState('bc1qjvefn35nvcjamms7zxnw3509sckq78hkn7xagc');
     const [btcAmount, setBtcAmount] = useState<string>('0');
     const [isLoading, setIsLoading] = useState(true);
     const [uploading, setUploading] = useState(false);
