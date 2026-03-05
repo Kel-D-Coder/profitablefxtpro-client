@@ -9,6 +9,7 @@ export const Deposit: React.FC = () => {
     const { amount, wallet, planName } = location.state || { amount: 0, wallet: 'deposit', planName: 'Investment' };
     const [selectedFile, setSelectedFile] = useState<File | null>(null);
     const [btcAddress] = useState('bc1qjvefn35nvcjamms7zxnw3509sckq78hkn7xagc');
+    const [ethAddress] = useState("0xE4022eA94C80E461626bE64A06F3f3A5cB00938A")
     const [btcAmount, setBtcAmount] = useState<string>('0');
     const [isLoading, setIsLoading] = useState(true);
     const [uploading, setUploading] = useState(false);
@@ -132,6 +133,21 @@ export const Deposit: React.FC = () => {
                             </code>
                             <button 
                                 onClick={() => copyToClipboard(btcAddress)}
+                                className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg transition-colors cursor-pointer"
+                            >
+                                Copy Address
+                            </button>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p className="text-gray-300 mb-2">Send the exact amount to the Ethereum wallet address:</p>
+                        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                            <code className="bg-white p-3 rounded-lg flex-1 text-sm overflow-auto">
+                                {ethAddress}
+                            </code>
+                            <button 
+                                onClick={() => copyToClipboard(ethAddress)}
                                 className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg transition-colors cursor-pointer"
                             >
                                 Copy Address
